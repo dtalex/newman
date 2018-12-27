@@ -61,7 +61,9 @@ program
         options.reporter = _.transform(_.omit(reporterOptions, '_generic'), (acc, value, key) => {
             acc[key] = _.assignIn(value, reporterOptions._generic); // overrides reporter options with _generic
         }, {});
-
+        console.log('This is a forked version of newman. adding switch --ssl-cert-info')
+        console.log('Open issue on github to monitor when feature will be implemented: https://github.com/postmanlabs/newman/issues/1839')
+        console.log('Actual Fork https://github.com/dtalex/newman/tree/myMod')
         newman.run(options, function (err, summary) {
             const runError = err || summary.run.error || summary.run.failures.length;
 

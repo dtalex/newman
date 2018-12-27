@@ -47,12 +47,8 @@ program
     .option('--timeout-script [n]', 'Specify a timeout for script (in milliseconds).', util.cast.integer, 0)
     .option('--ignore-redirects', 'If present, Newman will not follow HTTP Redirects.')
     .option('-k, --insecure', 'Disables SSL validations.')
-    .option('--ssl-client-cert <path>',
-        'Specify the path to the Client SSL certificate. Supports .cert and .pfx files.')
-    .option('--ssl-client-key <path>',
-        'Specify the path to the Client SSL key (not needed for .pfx files)')
-    .option('--ssl-client-passphrase <path>',
-        'Specify the Client SSL passphrase (optional, needed for passphrase protected keys).')
+    .option('--ssl-cert-info <path>',
+    'Specify the path to the Client SSL info.')
     .action((collection, command) => {
         let options = util.commanderToObject(command),
 
